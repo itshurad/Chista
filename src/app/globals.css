@@ -1,26 +1,366 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-iranYekan), sans-serif;
+}
+.tiptap-editor {
+  direction: rtl;
+}
+
+.tiptap-editor p {
+  margin: 0.75rem 0;
+}
+
+.tiptap-editor p:first-child {
+  margin-top: 0;
+}
+
+.tiptap-editor p:last-child {
+  margin-bottom: 0;
+}
+
+.tiptap-editor h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2;
+  font-weight: 900;
+  color: #14151a;
+}
+
+.tiptap-editor h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.25rem;
+  line-height: 2;
+  font-weight: 900;
+  color: #14151a;
+}
+
+.tiptap-editor h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 2;
+  font-weight: 800;
+  color: #14151a;
+}
+
+.tiptap-editor ul {
+  margin: 1rem 0;
+  padding-right: 1.5rem;
+  list-style-type: disc;
+}
+
+.tiptap-editor ol {
+  margin: 1rem 0;
+  padding-right: 1.5rem;
+  list-style-type: decimal;
+}
+
+.tiptap-editor li {
+  padding-right: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.tiptap-editor blockquote {
+  margin: 1.5rem 0;
+  border-right: 4px solid #ffcc00;
+  border-left: 0;
+  border-radius: 0.75rem;
+  background: #fffaf0;
+  padding: 1rem 1.25rem;
+  color: #555861;
+  font-weight: 600;
+}
+
+.tiptap-editor code {
+  direction: ltr;
+  display: inline-block;
+  border-radius: 0.4rem;
+  background: #f1f0ec;
+  padding: 0.1rem 0.4rem;
+  font-family: monospace;
+  font-size: 0.85em;
+}
+
+.tiptap-editor pre {
+  direction: ltr;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 1rem;
+  background: #18181b;
+  padding: 1rem;
+  text-align: left;
+}
+
+.tiptap-editor pre code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: #f4f4f5;
+}
+
+.tiptap-editor a {
+  color: #3b5bdb;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tiptap-editor hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e8e6e1;
+}
+
+.tiptap-editor:focus {
+  outline: none;
+}
+
+.tiptap-editor p.is-editor-empty:first-child::before {
+  float: right;
+  height: 0;
+  color: #a0a4b0;
+  content: attr(data-placeholder);
+  pointer-events: none;
+}
+/* =========================
+   Article / Tiptap Content
+========================= */
+
+.article-content {
+  direction: rtl;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* Paragraph */
+
+.article-content p {
+  margin: 1rem 0;
+}
+
+.article-content p:first-child {
+  margin-top: 0;
+}
+
+.article-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Headings */
+
+.article-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-right: 0.9rem;
+  border-right: 4px solid #ff8a00;
+  color: #14151a;
+  font-size: 1.5rem;
+  line-height: 2;
+  font-weight: 900;
+}
+
+.article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  padding-right: 0.75rem;
+  border-right: 3px solid #ffcc00;
+  color: #14151a;
+  font-size: 1.25rem;
+  line-height: 2;
+  font-weight: 900;
+}
+
+.article-content h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #14151a;
+  font-size: 1.1rem;
+  line-height: 2;
+  font-weight: 800;
+}
+
+/* Strong */
+
+.article-content strong {
+  color: #14151a;
+  font-weight: 900;
+}
+
+/* Italic */
+
+.article-content em {
+  font-style: italic;
+}
+
+/* Links */
+
+.article-content a {
+  color: #3b5bdb;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.article-content a:hover {
+  color: #ff8a00;
+}
+
+/* Unordered list */
+
+.article-content ul {
+  margin: 1.25rem 0;
+  padding-right: 1.75rem;
+  list-style-type: disc;
+}
+
+.article-content ul ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  list-style-type: circle;
+}
+
+/* Ordered list */
+
+.article-content ol {
+  margin: 1.25rem 0;
+  padding-right: 1.75rem;
+  list-style-type: decimal;
+}
+
+.article-content ol ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  list-style-type: lower-alpha;
+}
+
+/* List item */
+
+.article-content li {
+  margin: 0.35rem 0;
+  padding-right: 0.25rem;
+}
+
+/* Blockquote */
+
+.article-content blockquote {
+  position: relative;
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-right: 4px solid #ffcc00;
+  border-radius: 0.75rem;
+  background: #fffaf0;
+  color: #555861;
+  font-weight: 700;
+}
+
+.article-content blockquote p {
+  margin: 0;
+}
+
+/* Inline code */
+
+.article-content code {
+  direction: ltr;
+  display: inline-block;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.4rem;
+  background: #f1f0ec;
+  color: #c92a2a;
+  font-family: monospace;
+  font-size: 0.88em;
+  font-weight: 600;
+}
+
+/* Code block */
+
+.article-content pre {
+  direction: ltr;
+  margin: 1.75rem 0;
+  overflow-x: auto;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: #18181b;
+  color: #f4f4f5;
+  text-align: left;
+  box-shadow: 0 10px 30px -12px rgba(20, 21, 26, 0.25);
+}
+
+.article-content pre code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+/* Horizontal line */
+
+.article-content hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid #e8e6e1;
+}
+
+/* Images inside article */
+
+.article-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem auto;
+  border-radius: 1.25rem;
+}
+
+/* Image with link */
+
+.article-content a img {
+  transition: opacity 0.2s ease;
+}
+
+.article-content a:hover img {
+  opacity: 0.9;
+}
+
+/* First heading */
+
+.article-content > h2:first-child,
+.article-content > h3:first-child,
+.article-content > h4:first-child {
+  margin-top: 0;
+}
+
+/* Selection */
+
+.article-content ::selection {
+  background: #ffcc00;
+  color: #14151a;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .article-content {
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+
+  .article-content h2 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+
+  .article-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .article-content pre {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    border-radius: 0.75rem;
+  }
 }
