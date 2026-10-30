@@ -46,10 +46,7 @@ export default function SiteFooter() {
   };
 
   return (
-    <footer
-      dir="rtl"
-      className="w-full bg-[#F8F7F4] pt-12 pb-24 md:pb-12"
-    >
+    <footer dir="rtl" className="w-full bg-[#F8F7F4] pt-12 pb-24 md:pb-12">
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
         {/* ========================================================= */}
         {/* ۱. کارت خبرنامه (Newsletter) با گرادینت تیره مشابه کارت Completed Courses */}
@@ -68,8 +65,8 @@ export default function SiteFooter() {
               </h3>
 
               <p className="max-w-xl text-xs leading-relaxed font-medium text-white/65">
-                با ثبت ایمیل خود، جدیدترین مقالات تخصصی و کوپن‌های تخفیف دوره‌ها را
-                مستقیماً دریافت کنید. بدون هیچ ایمیل تبلیغاتی مزاحم.
+                با ثبت ایمیل خود، جدیدترین مقالات تخصصی و کوپن‌های تخفیف دوره‌ها
+                را مستقیماً دریافت کنید. بدون هیچ ایمیل تبلیغاتی مزاحم.
               </p>
             </div>
 
@@ -182,13 +179,13 @@ export default function SiteFooter() {
 
               <ul className="space-y-2 text-xs font-bold text-[#8E929F]">
                 {[
-                  { title: "صفحه اصلی", href: "/" },
-                  { title: "دوره‌های آموزشی", href: "/courses" },
-                  { title: "مقالات تخصصی", href: "/" },
-                  { title: "پیگیری سفارشات", href: "/orders" },
-                  { title: "ارتباط با ما", href: "/contact" },
+                  { id: 1, title: "صفحه اصلی", href: "/" },
+                  { id: 2, title: "دوره‌های آموزشی", href: "/courses" },
+                  { id: 3, title: "مقالات تخصصی", href: "/" },
+                  { id: 4, title: "پیگیری سفارشات", href: "/orders" },
+                  { id: 5, title: "ارتباط با ما", href: "/contact" },
                 ].map((link) => (
-                  <li key={link.href}>
+                  <li key={link.id}>
                     <Link
                       href={link.href}
                       className="inline-flex items-center gap-1 transition-colors hover:text-[#FF8A00]"
@@ -216,10 +213,7 @@ export default function SiteFooter() {
                     <Phone className="h-3.5 w-3.5 text-[#FF8A00]" />
                     تلفن پشتیبانی
                   </span>
-                  <span
-                    dir="ltr"
-                    className="  font-extrabold text-[#14151A]"
-                  >
+                  <span dir="ltr" className="  font-extrabold text-[#14151A]">
                     021 - 9100 2026
                   </span>
                 </div>
@@ -229,10 +223,7 @@ export default function SiteFooter() {
                     <Mail className="h-3.5 w-3.5 text-[#3B5BDB]" />
                     ایمیل
                   </span>
-                  <span
-                    dir="ltr"
-                    className="  font-extrabold text-[#14151A]"
-                  >
+                  <span dir="ltr" className="  font-extrabold text-[#14151A]">
                     info@academylearn.ir
                   </span>
                 </div>
